@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using Ardalis.GuardClauses;
 using Microsoft.eShopWeb.ApplicationCore.Interfaces;
 
@@ -9,6 +10,7 @@ public class CatalogItem : BaseEntity, IAggregateRoot
     public string Name { get; private set; }
     public string Description { get; private set; }
     public decimal Price { get; private set; }
+    public string Color { get; private set; }
     public string PictureUri { get; private set; }
     public int CatalogTypeId { get; private set; }
     public CatalogType CatalogType { get; private set; }
@@ -20,6 +22,7 @@ public class CatalogItem : BaseEntity, IAggregateRoot
         string description,
         string name,
         decimal price,
+        string color,
         string pictureUri)
     {
         CatalogTypeId = catalogTypeId;
@@ -27,6 +30,7 @@ public class CatalogItem : BaseEntity, IAggregateRoot
         Description = description;
         Name = name;
         Price = price;
+        Color = color;
         PictureUri = pictureUri;
     }
 

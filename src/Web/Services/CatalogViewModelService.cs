@@ -55,6 +55,7 @@ public class CatalogViewModelService : ICatalogViewModelService
             {
                 Id = i.Id,
                 Name = i.Name,
+                Color = i.Color,
                 PictureUri = _uriComposer.ComposePicUri(i.PictureUri),
                 Price = i.Price
             }).ToList(),

@@ -10,4 +10,5 @@ public class CreateCatalogItemRequest : BaseRequest
     public string PictureBase64 { get; set; }
     public string PictureName { get; set; }
     public decimal Price { get; set; }
+    public string Color { get; internal set; }
 }

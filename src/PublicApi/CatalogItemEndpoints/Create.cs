@@ -45,7 +45,7 @@ public class Create : EndpointBaseAsync
             throw new DuplicateException($"A catalogItem with name {request.Name} already exists");
         }
 
-        var newItem = new CatalogItem(request.CatalogTypeId, request.CatalogBrandId, request.Description, request.Name, request.Price, request.PictureUri);
+        var newItem = new CatalogItem(request.CatalogTypeId, request.CatalogBrandId, request.Description, request.Name, request.Price, request.Color, request.PictureUri);
         newItem = await _itemRepository.AddAsync(newItem, cancellationToken);
 
         if (newItem.Id != 0)
@@ -65,6 +65,7 @@ public class Create : EndpointBaseAsync
             CatalogTypeId = newItem.CatalogTypeId,
             Description = newItem.Description,
             Name = newItem.Name,
+            Color = newItem.Color,
             PictureUri = _uriComposer.ComposePicUri(newItem.PictureUri),
             Price = newItem.Price
         };

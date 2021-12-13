@@ -13,10 +13,11 @@ public class UpdateDetails
     private string _validName = "test name";
     private decimal _validPrice = 1.23m;
     private string _validUri = "/123";
+    private string _validColor;
 
     public UpdateDetails()
     {
-        _testItem = new CatalogItem(_validTypeId, _validBrandId, _validDescription, _validName, _validPrice, _validUri);
+        _testItem = new CatalogItem(_validTypeId, _validBrandId, _validDescription, _validName, _validPrice, _validColor, _validUri);
     }
 
     [Fact]
